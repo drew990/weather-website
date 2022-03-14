@@ -28,20 +28,16 @@ function saveSearch() {
     }
   }
 
-  console.log("CAME BACK: ", foundCity);
-
   if (foundCity == false) {
     //If to the max of 10 then it'll delete 9 and move every city up one
     if (historyArr.length === 10) {
       var lastCity;
-      console.log("AT MAX");
       lastCity = historyArr[9];
       localStorage.removeItem(lastCity);
 
       $("#his9").remove();
 
       for (let i = historyArr.length; i > 0; i--) {
-        console.log(historyArr);
         historyArr[i + 1] = historyArr[i];
       }
     }
@@ -61,7 +57,6 @@ function getHistoryStorage() {
     var key = localStorage.key(i);
     historyArr[i] = key;
   }
-  console.log(historyArr);
   //Goes through each name in the array and appends them in <p>
   jQuery.each(historyArr, function (i, val) {
     $("#city-list").append("<button id=his" + i + ">" + val + "</button>");
@@ -75,7 +70,7 @@ function searchCity() {
   API =
     "http://api.openweathermap.org/data/2.5/forecast?q=" +
     cityValue +
-    "&appid=a73630cab486294f7850d98108179a61&units=imperial";
+    "&appid=7d65ba6254830bdb15ac499b220e2fa2&units=imperial";
 
   //Fetches the API
   fetch(API)
@@ -106,7 +101,7 @@ function searchCity() {
           cityLat +
           "&lon=" +
           cityLon +
-          "&exclude=minutely,hourly&appid=a73630cab486294f7850d98108179a61&units=imperial";
+          "&exclude=minutely,hourly&appid=7d65ba6254830bdb15ac499b220e2fa2&units=imperial";
 
         //From lat and longitude number, it'll get more info about it and will be in data
         fetch(detailAPI)
@@ -120,7 +115,6 @@ function searchCity() {
             let unix_timestamp = data.current.dt;
             var day = new Date(unix_timestamp * 1000);
 
-            console.log(data);
             //Displays the city basics info
             $("#cityDetails").append(
               "<img src=http://openweathermap.org/img/wn/" +
