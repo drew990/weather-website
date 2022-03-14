@@ -68,7 +68,7 @@ function searchCity() {
 
   //Fills in the city value API
   API =
-    "http://api.openweathermap.org/data/2.5/forecast?q=" +
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
     cityValue +
     "&appid=7d65ba6254830bdb15ac499b220e2fa2&units=imperial";
 
