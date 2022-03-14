@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Reading css file in assets -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Website</title>
+  </head>
+  <body>
+    <header>
+      <h1>Weather Dashboard</h1>
+      <input
+        id="city"
+        type="text"
+        name="city"
+        placeholder="Search for a city"
+      />
+      <button id="search">Search</button>
+      <div id="errorMessage"></div>
+    </header>
+    <div>
+      <main>
+        <div id="cityHistory" class="history">
+          <h2>Previous Cities</h2>
+          <p>Click on a city to get the weather again</p>
+          <br />
+          <div id="city-list" class="city-list-style"></div>
+        </div>
+        <section>
+          <div id="cityDetails" class="cityDetails"></div>
+          <div>
+            <h2>5-Day Forecast</h2>
+            <div id="cityWeather" class="forecast"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Getting script from assets folder -->
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
